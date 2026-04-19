@@ -75,11 +75,11 @@
         <p class="promo">🎁 Назови <strong>website2026</strong> и получи скидку 5% на любую услугу — приятный бонус для гостей сайта ❤️</p>
         <p class="cta-row">
           <a class="cta" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
-            <img src="assets/telegram.png" alt="Telegram" class="messenger-icon"/>
+            <img src="assets/telegram.svg" alt="Telegram" class="messenger-icon"/>
             Написать в Telegram
           </a>
-          <a class="cta ghost" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">
-            <img src="assets/whatsapp.png" alt="WhatsApp" class="messenger-icon"/>
+          <a class="cta ghost" href="#contact">
+            <img src="assets/whatsapp.svg" alt="WhatsApp" class="messenger-icon"/>
             Написать в WhatsApp
           </a>
         </p>
@@ -258,19 +258,16 @@
         <label>Имя
           <input name="name" type="text" placeholder="Ваше имя" required />
         </label>
-        <label>Контакт (телефон или email)
-          <input name="contact" type="text" placeholder="Телефон или email" required />
-        </label>
         <label>Сообщение
           <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
         </label>
-        <div class="form-actions">
-          <button type="submit" class="btn">
-            <img src="assets/whatsapp.png" alt="WhatsApp" class="messenger-icon"/>
+        <div class="cta-row" style="margin-top:10px;">
+          <button type="submit" class="cta">
+            <img src="assets/whatsapp.svg" alt="WhatsApp" class="messenger-icon"/>
             Отправить в WhatsApp
           </button>
-          <a class="btn ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
-            <img src="assets/telegram.png" alt="Telegram" class="messenger-icon"/>
+          <a class="cta ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
+            <img src="assets/telegram.svg" alt="Telegram" class="messenger-icon"/>
             Открыть Telegram
           </a>
         </div>

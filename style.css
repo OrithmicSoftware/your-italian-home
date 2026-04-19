@@ -119,10 +119,39 @@ html{scroll-behavior:smooth;scroll-padding-top:70px}
 .hero-content h1{margin:0 0 14px;font-size:2.4rem;line-height:1.2;letter-spacing:-.02em}
 .lead{opacity:0.95;margin-bottom:20px;font-size:1.1rem}
 
-.cta-row .cta{display:inline-block;padding:12px 20px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-warm));color:#fff;text-decoration:none;margin-right:8px;font-weight:600;transition:transform .2s,box-shadow .2s}
-.cta-row .cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(192,57,43,.35)}
-.cta.ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.4)}
-.cta.ghost:hover{background:rgba(255,255,255,.22)}
+
+.cta-row {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.cta {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,var(--accent),var(--accent-warm));
+  color: #fff;
+  text-decoration: none;
+  margin-right: 8px;
+  font-weight: 600;
+  transition: transform .2s, box-shadow .2s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(192,57,43,.35);
+}
+.cta.ghost {
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+}
+.cta.ghost:hover {
+  background: rgba(255,255,255,.22);
+}
 
 /* Messenger icon standard style */
 .messenger-icon {
@@ -203,10 +232,29 @@ h2::after{content:'';position:absolute;left:0;bottom:-6px;width:50px;height:3px;
 .section-dark p{color:rgba(255,255,255,.85)}
 
 /* Reviews carousel */
+
 .carousel{overflow:hidden;position:relative}
 .carousel-track{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:18px;transition:opacity .4s ease}
-.carousel .review{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--accent-warm);display:flex;flex-direction:column;justify-content:space-between}
-.carousel .review p{color:rgba(255,255,255,.85)}
+.carousel .review{
+  }
+
+  /* Ensure review cards in carousel are fully transparent and have no shadow */
+  #reviews .carousel .review, #reviews .carousel .review:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  background:transparent;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,.1);
+  border-left:4px solid var(--accent-warm);
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.1);
+  border-left:4px solid var(--accent-warm);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.carousel .review p{color:rgba(255,255,255,.92)}
 .carousel .review cite{color:var(--accent-warm)}
 .carousel-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px}
 .carousel-btn{background:none;border:2px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.4rem;cursor:pointer;transition:border-color .2s,background .2s;display:flex;align-items:center;justify-content:center}
