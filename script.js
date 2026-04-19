@@ -1,19 +1,20 @@
 // Global helper to open messenger deep-links with sane prefilled text
-window.openMessenger = function(type){
+window.openMessenger = function(type, text){
   try {
     if(type === 'telegram'){
-      const url = 'https://t.me/italian_home_bot?text=' + encodeURIComponent('/start');
+      const t = text || '/start';
+      const url = 'https://t.me/italian_home_bot?text=' + encodeURIComponent(t);
       window.open(url, '_blank');
       return;
     }
     if(type === 'whatsapp'){
-      const text = 'Здравствуйте! Меня зовут [имя]. Интересует покупка/аренда в Турине. Бюджет: ___, район: ___. Спасибо!';
-      const url = 'https://wa.me/972507006020?text=' + encodeURIComponent(text);
+      const t = text || 'Здравствуйте! Меня зовут [имя]. Интересует покупка/аренда в Турине. Бюджет: ___, район: ___. Спасибо!';
+      const url = 'https://wa.me/972507006020?text=' + encodeURIComponent(t);
       window.open(url, '_blank');
       return;
     }
     // fallback: open Telegram
-    window.open('https://t.me/italian_home_bot?text=' + encodeURIComponent('/start'), '_blank');
+    window.open('https://t.me/italian_home_bot?text=' + encodeURIComponent(text || '/start'), '_blank');
   } catch (e) { console.warn('openMessenger failed', e); }
 };
 
@@ -64,25 +65,21 @@ document.addEventListener('DOMContentLoaded',()=>{
     window.open('https://t.me/vladislavssssss','_blank')
   })
 
-  const formContact=document.getElementById('contactForm');
-  formContact&&formContact.addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    const name = formContact.elements['name'].value;
-    const contact = formContact.elements['contact'].value;
-    const message = formContact.elements['message'].value;
-    try {
-      const { sendLeadToTelegram } = await import('./send-lead.js');
-      const ok = await sendLeadToTelegram({ name, contact, message });
-      if (ok) {
-        alert('Спасибо! Сообщение отправлено. Мы свяжемся с вами в Telegram.');
-        formContact.reset();
-      } else {
-        alert('Ошибка при отправке. Попробуйте позже или напишите в Telegram.');
-      }
-    } catch (err) {
-      alert('Ошибка при отправке. Попробуйте позже или напишите в Telegram.');
-    }
-  })
+  const formContact = document.getElementById('contactForm');
+  if (formContact) {
+    formContact.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (formContact.elements['name'].value || '').trim();
+      const contact = (formContact.elements['contact'].value || '').trim();
+      const message = (formContact.elements['message'].value || '').trim();
+      const parts = [];
+      parts.push(`Здравствуйте! Меня зовут ${name || '[имя]'}.`);
+      if (message) parts.push(message);
+      if (contact) parts.push(`Контакт: ${contact}`);
+      const full = parts.join(' \n');
+      window.openMessenger('whatsapp', full);
+    });
+  }
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.section-hero, .card, .split-img, .split-text, .docs-grid figure, .contact-overlay, .review, .faq-item, .map-wrap, .stat');

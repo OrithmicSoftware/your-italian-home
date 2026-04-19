@@ -80,8 +80,13 @@
         <div class="map-wrap">
           <div class="svg-map-italy">
             <img src="assets/it.svg" alt="Карта Италии" class="region-map-full" loading="lazy" />
+              </div>
+            </div>
           </div>
-    <section id="services" class="container section">
+        </div>
+      </section>
+
+      <section id="services" class="container section">
       <h2><span class="section-icon" aria-hidden="true">🔑</span> Услуги</h2>
       <div class="section-hero">
         <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80" alt="Итальянская квартира с балконом" loading="lazy">
@@ -128,7 +133,7 @@
     <section id="about" class="container section">
       <div class="split reverse">
         <div class="split-img">
-          <img src="assets/about-ludmila.jpg" alt="Консультант по недвижимости в Турине" loading="lazy">
+          <img src="assets/about-photo.jpg" alt="Консультант по недвижимости в Турине" loading="lazy">
         </div>
         <div class="split-text">
           <h2><span class="section-icon" aria-hidden="true">👩‍💼</span> О нас</h2>
@@ -284,15 +289,27 @@
     <section id="contact" class="container section contact" style="background:url('https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=1400&q=80') center/cover no-repeat fixed">
       <div class="contact-overlay">
       <h2><span class="section-icon" aria-hidden="true">✉️</span> Связаться</h2>
-      <p>Пишите нам напрямую в мессенджерах — быстро и удобно.</p>
-      <div class="contact-buttons">
-        <a class="btn" href="https://t.me/italian_home_bot?text=%2Fstart" target="_blank" rel="noopener">Написать в Telegram</a>
-        <a class="btn ghost" href="https://wa.me/972507006020?text=Здравствуйте!%20Меня%20зовут%20%5Bимя%5D.%20Интересует%20покупка/аренда%20в%20Турине.%20Бюджет:%20___,%20район:%20___.%20Спасибо!" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">Написать в WhatsApp</a>
-      </div>
+      <p>Пишите нам — заполни форму, и мы откроем WhatsApp с вашим сообщением.</p>
+
+      <form id="contactForm" class="contact-form" autocomplete="off">
+        <label>Имя
+          <input name="name" type="text" placeholder="Ваше имя" required />
+        </label>
+        <label>Контакт (телефон или email)
+          <input name="contact" type="text" placeholder="Телефон или email" required />
+        </label>
+        <label>Сообщение
+          <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Отправить в WhatsApp</button>
+          <a class="btn ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">Открыть Telegram</a>
+        </div>
+      </form>
+
       <p style="margin-top:12px;opacity:.9">Telegram: <strong>@Ludmilatorino</strong></p>
       </div>
     </section>
-  </main>
 
   <footer class="site-footer">
     <div class="container">
