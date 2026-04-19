@@ -72,11 +72,9 @@ document.addEventListener('DOMContentLoaded',()=>{
       const name = (formContact.elements['name'].value || '').trim();
       const contact = (formContact.elements['contact'].value || '').trim();
       const message = (formContact.elements['message'].value || '').trim();
-      const parts = [];
-      parts.push(`Здравствуйте! Меня зовут ${name || '[имя]'}.`);
-      if (message) parts.push(message);
-      if (contact) parts.push(`Контакт: ${contact}`);
-      const full = parts.join(' \n');
+      let full = `Здравствуйте! Меня зовут ${name || '[имя]'}.`;
+      if (message) full += `\nТекст сообщения: ${message}`;
+      if (contact) full += `\nКонтакт: ${contact}`;
       window.openMessenger('whatsapp', full);
     });
   }

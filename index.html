@@ -60,7 +60,7 @@
         <a href="#documents">Документы</a>
         <a href="#reviews">Отзывы</a>
         <a href="#faq">FAQ</a>
-        <a href="#map">География</a>
+        
         <a href="#contact" class="btn">Написать</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Открыть меню">☰</button>
@@ -74,17 +74,18 @@
         <p class="lead">Привет! Я Людмила, консультант по недвижимости в Турине. Помогу найти, купить и оформить недвижимость без стресса и переплат.</p>
         <p class="promo">🎁 Назови <strong>website2026</strong> и получи скидку 5% на любую услугу — приятный бонус для гостей сайта ❤️</p>
         <p class="cta-row">
-          <a class="cta" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="cta ghost" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">Написать в WhatsApp</a>
+          <a class="cta" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
+            <img src="assets/telegram.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"/>
+            Написать в Telegram
+          </a>
+          <a class="cta ghost" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">
+            <img src="assets/whatsapp.svg" alt="WhatsApp" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"/>
+            Написать в WhatsApp
+          </a>
         </p>
-        <div class="map-wrap">
-          <div class="svg-map-italy">
-            <img src="assets/it.svg" alt="Карта Италии" class="region-map-full" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <!-- Карта удалена по запросу -->
+      </div>
+    </section>
 
       <section id="services" class="container section">
       <h2><span class="section-icon" aria-hidden="true">🔑</span> Услуги</h2>
@@ -124,7 +125,7 @@
           <p>Важно подбирать не просто «красивую» квартиру, а актив с понятной логикой дохода и хорошей ликвидностью. Я помогу оценить риски и выбрать именно тот формат, который работает под вашу цель.</p>
         </div>
         <div class="split-img">
-          <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?w=800&q=80" alt="Вид на Турин с крыши" loading="lazy">
+          <img src="https://images.pexels.com/photos/36726775/pexels-photo-36726775.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mole Antonelliana, Турин" loading="lazy">
         </div>
       </div>
       </div>
@@ -133,7 +134,7 @@
     <section id="about" class="container section">
       <div class="split reverse">
         <div class="split-img">
-          <img src="assets/about-photo.jpg" alt="Консультант по недвижимости в Турине" loading="lazy">
+          <img src="assets/ludmila.jpg" alt="Консультант по недвижимости в Турине" loading="lazy">
         </div>
         <div class="split-text">
           <h2><span class="section-icon" aria-hidden="true">👩‍💼</span> О нас</h2>
@@ -286,7 +287,7 @@
       </div>
     </section>
 
-    <section id="contact" class="container section contact" style="background:url('https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=1400&q=80') center/cover no-repeat fixed">
+    <section id="contact" class="container section contact" style="background:url('https://images.pexels.com/photos/33040847/pexels-photo-33040847.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover no-repeat fixed">
       <div class="contact-overlay">
       <h2><span class="section-icon" aria-hidden="true">✉️</span> Связаться</h2>
       <p>Пишите нам — заполни форму, и мы откроем WhatsApp с вашим сообщением.</p>
@@ -302,8 +303,14 @@
           <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
         </label>
         <div class="form-actions">
-          <button type="submit" class="btn">Отправить в WhatsApp</button>
-          <a class="btn ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">Открыть Telegram</a>
+          <button type="submit" class="btn">
+            <img src="assets/whatsapp.svg" alt="WhatsApp" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"/>
+            Отправить в WhatsApp
+          </button>
+          <a class="btn ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
+            <img src="assets/telegram.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"/>
+            Открыть Telegram
+          </a>
         </div>
       </form>
 

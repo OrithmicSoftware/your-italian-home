@@ -112,7 +112,7 @@ body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#222;back
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 .hero{
   padding:0;color:#fff;
-  background:url('assets/hero.jpg') center/cover no-repeat,
+  background:url('https://images.pexels.com/photos/33040847/pexels-photo-33040847.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat,
              linear-gradient(135deg,#1a2a4a 0%,#2d5e4a 40%,#a05030 70%,#d4955a 100%);
 }
 .hero-overlay{background:linear-gradient(180deg,rgba(20,20,40,.5),rgba(40,20,10,.6));padding:120px 0 100px}
