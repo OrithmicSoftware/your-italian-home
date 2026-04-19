@@ -118,10 +118,21 @@ html{scroll-behavior:smooth;scroll-padding-top:70px}
 .hero-overlay{background:linear-gradient(180deg,rgba(20,20,40,.5),rgba(40,20,10,.6));padding:120px 0 100px}
 .hero-content h1{margin:0 0 14px;font-size:2.4rem;line-height:1.2;letter-spacing:-.02em}
 .lead{opacity:0.95;margin-bottom:20px;font-size:1.1rem}
+
 .cta-row .cta{display:inline-block;padding:12px 20px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-warm));color:#fff;text-decoration:none;margin-right:8px;font-weight:600;transition:transform .2s,box-shadow .2s}
 .cta-row .cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(192,57,43,.35)}
 .cta.ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.4)}
 .cta.ghost:hover{background:rgba(255,255,255,.22)}
+
+/* Messenger icon standard style */
+.messenger-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 6px;
+  object-fit: contain;
+  display: inline-block;
+}
 
 .promo{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.3);padding:8px 16px;border-radius:8px;font-size:.95rem;margin-bottom:16px}
 .promo strong{color:var(--accent-warm);letter-spacing:.04em}
