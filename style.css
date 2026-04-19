@@ -1,3 +1,76 @@
+
+/* --- CTA BUTTONS: Reference site style --- */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 2px 0;
+  margin: 0 12px 0 0;
+  min-width: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color .18s;
+}
+.cta:hover,
+.cta:focus {
+  color: var(--accent-warm);
+  background: none;
+  text-decoration: underline wavy;
+}
+.cta img.messenger-icon {
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0 4px 0 0;
+  vertical-align: middle;
+  filter: none;
+}
+.cta-inline {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.01rem;
+  padding: 0 0 2px 0;
+  margin: 0 12px 0 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--accent);
+  min-width: 0;
+  text-decoration: underline;
+}
+.cta-inline.ghost {
+  color: var(--accent-warm);
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+.cta-small {
+  font-size: 0.98rem;
+  padding: 0 0 2px 0;
+  margin: 0 0 0 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--accent);
+  min-width: 0;
+  text-decoration: underline;
+}
+.card-cta-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: auto;
+  padding: 0 20px 18px 20px;
+  min-height: 44px;
+}
 /* Section icons */
 .section-icon {
   font-size: 1.35em;
@@ -112,56 +185,16 @@ body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#222;back
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 .hero{
   padding:0;color:#fff;
-  background:url('https://images.pexels.com/photos/33040847/pexels-photo-33040847.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat,
+  background:url('assets/hero.jpg') center/cover no-repeat,
              linear-gradient(135deg,#1a2a4a 0%,#2d5e4a 40%,#a05030 70%,#d4955a 100%);
 }
 .hero-overlay{background:linear-gradient(180deg,rgba(20,20,40,.5),rgba(40,20,10,.6));padding:120px 0 100px}
-.hero-content h1{margin:0 0 14px;font-size:2.4rem;line-height:1.2;letter-spacing:-.02em}
+.hero-content h1{margin:0 0 14px;font-size:2.1rem;line-height:1.2;letter-spacing:-.02em}
 .lead{opacity:0.95;margin-bottom:20px;font-size:1.1rem}
-
-
-.cta-row {
-  display: flex;
-  gap: 0;
-  align-items: center;
-}
-.cta {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 10px;
-  background: linear-gradient(135deg,var(--accent),var(--accent-warm));
-  color: #fff;
-  text-decoration: none;
-  margin-right: 8px;
-  font-weight: 600;
-  transition: transform .2s, box-shadow .2s;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-.cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(192,57,43,.35);
-}
-.cta.ghost {
-  background: rgba(255,255,255,.12);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: #fff;
-}
-.cta.ghost:hover {
-  background: rgba(255,255,255,.22);
-}
-
-/* Messenger icon standard style */
-.messenger-icon {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  margin-right: 6px;
-  object-fit: contain;
-  display: inline-block;
-}
+.cta-row .cta{display:inline-block;padding:12px 20px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-warm));color:#fff;text-decoration:none;margin-right:8px;font-weight:600;transition:transform .2s,box-shadow .2s}
+.cta-row .cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(192,57,43,.35)}
+.cta.ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.4)}
+.cta.ghost:hover{background:rgba(255,255,255,.22)}
 
 .promo{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.3);padding:8px 16px;border-radius:8px;font-size:.95rem;margin-bottom:16px}
 .promo strong{color:var(--accent-warm);letter-spacing:.04em}
@@ -185,7 +218,17 @@ h2{font-size:1.7rem;letter-spacing:-.01em;position:relative;display:inline-block
 h2::after{content:'';position:absolute;left:0;bottom:-6px;width:50px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-warm))}
 .pale{background:#fff}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--card);padding:0;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:transform .25s,box-shadow .25s;overflow:hidden}
+.card{
+  background:var(--card);
+  padding:0;
+  border-radius:14px;
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.04);
+  transition:transform .25s,box-shadow .25s;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
 .card-img{width:100%;height:180px;object-fit:cover;display:block}
 .card h3{margin:16px 20px 8px;color:var(--accent)}
@@ -232,29 +275,9 @@ h2::after{content:'';position:absolute;left:0;bottom:-6px;width:50px;height:3px;
 .section-dark p{color:rgba(255,255,255,.85)}
 
 /* Reviews carousel */
-
-.carousel{overflow:hidden;position:relative}
 .carousel-track{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:18px;transition:opacity .4s ease}
-.carousel .review{
-  }
-
-  /* Ensure review cards in carousel are fully transparent and have no shadow */
-  #reviews .carousel .review, #reviews .carousel .review:hover {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-  background:transparent;
-  box-shadow: none;
-  border: 1px solid rgba(255,255,255,.1);
-  border-left:4px solid var(--accent-warm);
-  backdrop-filter:blur(4px);
-  border:1px solid rgba(255,255,255,.1);
-  border-left:4px solid var(--accent-warm);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.carousel .review p{color:rgba(255,255,255,.92)}
+.carousel .review{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--accent-warm);display:flex;flex-direction:column;justify-content:space-between}
+.carousel .review p{color:rgba(255,255,255,.85)}
 .carousel .review cite{color:var(--accent-warm)}
 .carousel-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px}
 .carousel-btn{background:none;border:2px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.4rem;cursor:pointer;transition:border-color .2s,background .2s;display:flex;align-items:center;justify-content:center}
@@ -306,7 +329,7 @@ img.avatar{background:none}
   .nav a{color:#333}
   .nav .btn{text-align:center}
   .nav-toggle{display:block;cursor:pointer}
-  .hero-content h1{font-size:1.5rem}
+  .hero-content h1{font-size:1.1rem}
   .hero-overlay{padding:80px 0 60px}
   .split{grid-template-columns:1fr;gap:20px}
   .split.reverse{direction:ltr}
