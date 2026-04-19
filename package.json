@@ -1,0 +1,28 @@
+{
+  "name": "your-italian-home",
+  "version": "1.0.0",
+  "description": "Простой одностраничный сайт для консультанта по недвижимости Людмилы (русский язык).",
+  "main": "script.js",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "start": "live-server --port=3000 --no-browser",
+    "predeploy": "echo 'Preparing for deploy'",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrithmicSoftware/your-italian-home.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OrithmicSoftware/your-italian-home/issues"
+  },
+  "homepage": "https://github.com/OrithmicSoftware/your-italian-home#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "live-server": "^1.2.2"
+  }
+}
