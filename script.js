@@ -1,3 +1,22 @@
+// Global helper to open messenger deep-links with sane prefilled text
+window.openMessenger = function(type){
+  try {
+    if(type === 'telegram'){
+      const url = 'https://t.me/italian_home_bot?text=' + encodeURIComponent('/start');
+      window.open(url, '_blank');
+      return;
+    }
+    if(type === 'whatsapp'){
+      const text = 'Здравствуйте! Меня зовут [имя]. Интересует покупка/аренда в Турине. Бюджет: ___, район: ___. Спасибо!';
+      const url = 'https://wa.me/972507006020?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+      return;
+    }
+    // fallback: open Telegram
+    window.open('https://t.me/italian_home_bot?text=' + encodeURIComponent('/start'), '_blank');
+  } catch (e) { console.warn('openMessenger failed', e); }
+};
+
 document.addEventListener('DOMContentLoaded',()=>{
     // DEV PASSWORD PROTECT (remove for production)
     const DEV_PASSWORD = 'italia2026';
