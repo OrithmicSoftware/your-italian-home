@@ -68,24 +68,22 @@
   </header>
 
   <section class="hero">
-    <div class="hero-overlay">
-      <div class="container hero-content">
-        <h1>Италия ближе, чем кажется — поможем найти твой новый дом!</h1>
-        <p class="lead">Привет! Я Людмила, консультант по недвижимости в Турине. Помогу найти, купить и оформить недвижимость без стресса и переплат.</p>
-        <p class="promo">🎁 Назови <strong>website2026</strong> и получи скидку 5% на любую услугу — приятный бонус для гостей сайта ❤️</p>
-        <p class="cta-row">
-          <a class="cta cta-inline" href="https://t.me/italian_home_bot?text=%2Fstart" target="_blank" rel="noopener">
-            <img src="assets/telegram.svg" alt="Telegram" class="messenger-icon"/>
-            Написать в Telegram
-          </a>
-          <a class="cta cta-inline ghost" href="#contact">
-            <img src="assets/whatsapp.svg" alt="WhatsApp" class="messenger-icon"/>
-            Написать в WhatsApp
-          </a>
-        </p>
-        <!-- Карта удалена по запросу -->
+    <div class="hero-bg">
+      <video class="hero-video" autoplay loop muted playsinline poster="assets/hero.jpg">
+        <source src="assets/video/turin-landscape.mp4" type="video/mp4">
+        <img src="assets/hero.jpg" alt="Пейзаж Турина, Италия" />
+      </video>
+      <div class="hero-overlay">
+        <div class="container hero-content">
+                <h1>Твой дом в Италии</h1>
+                <p class="hero-desc">Поиск, покупка и сопровождение для жизни и инвестиций</p>
+                <p class="cta-row">
+                  <a class="cta" href="#contact">Подробнее</a>
+                </p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
       <section id="services" class="container section">
       <h2><span class="section-icon" aria-hidden="true">🔑</span> Услуги</h2>
@@ -261,6 +259,17 @@
       <form id="contactForm" class="contact-form" autocomplete="off">
         <label>Имя
           <input name="name" type="text" placeholder="Ваше имя" required />
+        </label>
+        <label>Услуга
+          <select name="service" class="service-select" required>
+            <option value="" disabled selected hidden>Выберите услугу…</option>
+            <option value="🏠 Покупка недвижимости">🏠 Покупка недвижимости</option>
+            <option value="🏡 Аренда недвижимости">🏡 Аренда недвижимости</option>
+            <option value="📑 Оформление документов">📑 Оформление документов</option>
+            <option value="💶 Налоги и бухгалтерия">💶 Налоги и бухгалтерия</option>
+            <option value="🤝 Сопровождение сделок">🤝 Сопровождение сделок</option>
+            <option value="🗣 Консультации по переезду и жизни в Италии">🗣 Консультации по переезду и жизни в Италии</option>
+          </select>
         </label>
         <label>Сообщение
           <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
