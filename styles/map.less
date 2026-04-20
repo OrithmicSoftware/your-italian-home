@@ -1,0 +1,40 @@
+@import "variables.less";
+
+// Example for SVG map and region styles
+.svg-map-italy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.region-map-full {
+  max-width: 100%;
+  height: auto;
+  background: #22242a;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #0002;
+  margin: 0 auto;
+  display: block;
+}
+.region-map-full text {
+  font-family: 'Playfair Display', serif;
+  paint-order: stroke fill;
+  stroke: #fff8;
+  stroke-width: 0.5;
+}
+#region-piedmont path {
+  filter: drop-shadow(0 0 6px #00924688);
+  transition: filter .2s;
+}
+#region-liguria path {
+  filter: drop-shadow(0 0 6px #ce2b3788);
+  transition: filter .2s;
+}
+#region-rest path {
+  opacity: 0.95;
+  transition: opacity .2s;
+}
+.region-map-full path:hover {
+  filter: drop-shadow(0 0 12px #fff8) brightness(1.1);
+  opacity: 1 !important;
+}

@@ -1,0 +1,28 @@
+@import "variables.less";
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: @accent;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color .18s;
+}
+.cta:hover,
+.cta:focus {
+  color: @accent-warm;
+  background: none;
+  text-decoration: underline wavy;
+}
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}

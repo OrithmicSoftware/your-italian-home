@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "live-server --port=3000",
     "start": "live-server --port=3000 --no-browser",
+    "less": "lessc styles/main.less style.css",
     "predeploy": "echo 'Preparing for deploy'",
     "deploy": "gh-pages -d ."
   },
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/OrithmicSoftware/your-italian-home#readme",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "less": "^4.6.4",
     "live-server": "^1.2.2"
   }
 }
