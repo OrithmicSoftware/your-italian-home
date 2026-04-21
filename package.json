@@ -7,6 +7,7 @@
     "dev": "live-server --port=3000",
     "start": "live-server --port=3000 --no-browser",
     "less": "lessc styles/main.less style.css",
+    "less:watch": "less-watch-compiler . . main.less main.css",
     "predeploy": "echo 'Preparing for deploy'",
     "deploy": "gh-pages -d ."
   },

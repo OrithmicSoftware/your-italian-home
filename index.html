@@ -275,13 +275,13 @@
           <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
         </label>
         <div class="cta-row" style="margin-top:10px;">
-          <button type="submit" class="cta">
+          <a class="cta sticky-cta--whatsapp" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">
             <img src="assets/whatsapp.svg" alt="WhatsApp" class="messenger-icon"/>
-            Отправить в WhatsApp
-          </button>
-          <a class="cta ghost" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
+            WhatsApp
+          </a>
+          <a class="cta sticky-cta--telegram" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
             <img src="assets/telegram.svg" alt="Telegram" class="messenger-icon"/>
-            Открыть Telegram
+            Telegram
           </a>
         </div>
       </form>
@@ -298,18 +298,17 @@
         <a href="#documents">Документы</a> · 
         <a href="#reviews">Отзывы</a> · 
         <a href="#faq">FAQ</a> · 
-        <a href="#map">География</a> · 
         <a href="#contact">Контакты</a>
       </nav>
-      <p>© Твой Дом в Италии — Пьемонте & Лигурия. Связь: <a href="https://t.me/vladislavssssss">@vladislavssssss</a> ❤️</p>
+      <p>© Твой Дом в Италии — Пьемонте & Лигурия❤️. Разработка сайта: <a href="https://t.me/vladislavssssss">@vladislavssssss</a></p>
     </div>
   </footer>
 
   <!-- Sticky mobile CTA -->
-  <div class="sticky-cta-group">
-    <a class="sticky-cta" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">✈️ Telegram</a>
-    <a class="sticky-cta small" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">💬 WhatsApp</a>
-  </div>
+  <!-- Floating WhatsApp button for mobile -->
+  <a class="floating-whatsapp" href="#contact" aria-label="Contact via WhatsApp">
+    <img src="assets/whatsapp.svg" alt="WhatsApp" width="32" height="32" />
+  </a>
 
   <!-- Scroll to Top Button -->
   <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Наверх">↑</button>

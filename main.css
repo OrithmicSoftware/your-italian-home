@@ -7,10 +7,39 @@
   --maxw: 1100px;
   --dark: #1a1a2e;
 }
-.cta {
-  display: inline-flex;
+.floating-whatsapp {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s;
+}
+.floating-whatsapp img {
+  width: 32px;
+  height: 32px;
+  margin: 12px;
+}
+@media (max-width: 800px) {
+  .floating-whatsapp {
+    display: flex;
+  }
+}
+.contact-form:focus-within ~ .floating-whatsapp,
+.contact-form:hover ~ .floating-whatsapp,
+.main-cta:focus-within ~ .floating-whatsapp,
+.main-cta:hover ~ .floating-whatsapp {
+  display: none !important;
+}
+.cta {
   font-size: 1.01rem;
   font-weight: 600;
   color: var(--accent);
@@ -609,16 +638,60 @@ h2::after {
   padding: 0;
   overflow: hidden;
 }
-.stats-row {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 32px 24px;
-  text-align: center;
+.cta-row {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  margin-top: auto !important;
+  padding: 0 0 0 0 !important;
+  min-height: 38px !important;
+  width: 100% !important;
+  overflow: visible !important;
 }
-.stat {
-  color: #fff;
+.cta-row .cta,
+.cta-row .ghost {
+  display: flex !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  margin: 0 !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  font-size: 0.93rem !important;
+  padding: 7px 0 7px 0 !important;
+  line-height: 1.05 !important;
+  height: 38px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+.cta-row .cta,
+.cta-row .ghost {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 50%;
+  max-width: 50%;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 0.93rem;
+  padding: 7px 0 7px 0;
+  line-height: 1.05;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-row .messenger-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  vertical-align: middle;
 }
 .stat-num {
   font-family: 'Playfair Display', Georgia, serif;
@@ -800,6 +873,48 @@ h2::after {
   text-decoration: none;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
 }
+.sticky-cta--whatsapp {
+  background: #fff !important;
+  color: #25d366 !important;
+  border: 2px solid #25d366 !important;
+  font-weight: 700;
+}
+.sticky-cta--whatsapp:hover {
+  background: #f4f4f4 !important;
+  color: #128c7e !important;
+  border-color: #128c7e !important;
+}
+.sticky-cta--whatsapp .messenger-icon {
+  filter: none;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.sticky-cta-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 0;
+}
+.sticky-cta {
+  flex: 1 1 0;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+}
+.sticky-cta--telegram {
+  background: linear-gradient(135deg, #229ED9, #0a7abf) !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.sticky-cta--telegram:hover {
+  background: linear-gradient(135deg, #0a7abf, #229ED9) !important;
+}
+.sticky-cta--telegram .messenger-icon {
+  filter: none;
+  vertical-align: middle;
+  margin-right: 6px;
+}
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -942,8 +1057,37 @@ img.avatar {
     max-width: 100%;
     margin: 0 auto;
   }
+  .sticky-cta-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0;
+  }
   .sticky-cta {
-    display: block;
+    display: block !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    font-size: 0.93rem !important;
+    padding: 7px 0 7px 0 !important;
+    line-height: 1.05 !important;
+    z-index: 101 !important;
+    height: 38px !important;
+  }
+  .sticky-cta .messenger-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
   }
   body {
     padding-bottom: 52px;
