@@ -362,14 +362,14 @@
           <textarea name="message" rows="4" placeholder="Кратко опишите запрос (бюджет, район, сроки)"></textarea>
         </label>
         <div class="cta-row" style="margin-top:10px;">
-          <a class="cta sticky-cta--whatsapp" href="https://wa.me/972507006020" onclick="event.preventDefault(); openMessenger('whatsapp');" target="_blank" rel="noopener">
+          <button type="submit" class="cta sticky-cta--whatsapp" data-messenger="whatsapp">
             <img src="assets/whatsapp.svg" alt="WhatsApp" class="messenger-icon"/>
             WhatsApp
-          </a>
-          <a class="cta sticky-cta--telegram" href="https://t.me/italian_home_bot?text=%2Fstart" onclick="event.preventDefault(); openMessenger('telegram');" target="_blank" rel="noopener">
+          </button>
+          <button type="submit" class="cta sticky-cta--telegram" data-messenger="telegram">
             <img src="assets/telegram.svg" alt="Telegram" class="messenger-icon"/>
             Telegram
-          </a>
+          </button>
         </div>
       </form>
 
