@@ -9,7 +9,7 @@ window.openMessenger = function(type, text){
     }
     if(type === 'whatsapp'){
       const t = text || 'Здравствуйте! Меня зовут [имя]. Интересует покупка/аренда в Турине. Бюджет: ___, район: ___. Спасибо!';
-      const url = 'https://wa.me/972507006020?text=' + encodeURIComponent(t);
+      const url = 'https://wa.me/972538276702?text=' + encodeURIComponent(t);
       window.open(url, '_blank');
       return;
     }
@@ -34,15 +34,36 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const formContact = document.getElementById('contactForm');
   if (formContact) {
-    formContact.addEventListener('submit', (e) => {
+    let chosenMessenger = 'whatsapp';
+    formContact.querySelectorAll('button[data-messenger]').forEach(btn => {
+      btn.addEventListener('click', () => { chosenMessenger = btn.dataset.messenger; });
+    });
+
+    formContact.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = (formContact.elements['name'].value || '').trim();
+      const name    = (formContact.elements['name'].value || '').trim();
       const service = (formContact.elements['service'] && formContact.elements['service'].value) ? formContact.elements['service'].value.trim() : '';
       const message = (formContact.elements['message'].value || '').trim();
+      const source = window.location.href;
       let full = `Здравствуйте! Меня зовут ${name || '[имя]'}.`;
       if (service) full += `\nУслуга: ${service}`;
       if (message) full += `\nТекст сообщения: ${message}`;
-      window.openMessenger('whatsapp', full);
+      full += `\nИсточник: ${source}`;
+
+      if (chosenMessenger === 'telegram') {
+        try {
+          await fetch('https://your-italian-home-bot-production.up.railway.app/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, ...(service ? { service } : {}), message, source })
+          });
+        } catch (err) {
+          console.warn('Lead API error', err);
+        }
+        window.openMessenger('telegram', full);
+      } else {
+        window.openMessenger('whatsapp', full);
+      }
     });
   }
 
