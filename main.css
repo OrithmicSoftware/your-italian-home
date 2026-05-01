@@ -1072,8 +1072,19 @@ img.avatar {
     column-gap: 0;
     row-gap: 2rem;
   }
-  .deal-layout .deal-video,
+  .deal-layout .deal-timeline--top {
+    order: 1;
+  }
+  .deal-layout .deal-timeline--bottom {
+    order: 2;
+  }
+  .deal-layout .deal-video {
+    order: 3;
+    grid-column: 1;
+    grid-row: auto;
+  }
   .deal-layout .deal-carousel {
+    order: 4;
     grid-column: 1;
     grid-row: auto;
   }

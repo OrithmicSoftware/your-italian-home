@@ -26,9 +26,11 @@
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 2rem;
-
-    .deal-video,
-    .deal-carousel { grid-column: 1; grid-row: auto; }
+    
+    .deal-timeline--top { order: 1; }
+    .deal-timeline--bottom { order: 2; }
+    .deal-video { order: 3; grid-column: 1; grid-row: auto; }
+    .deal-carousel { order: 4; grid-column: 1; grid-row: auto; }
   }
 }
 
