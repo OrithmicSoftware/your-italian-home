@@ -80,9 +80,8 @@
 
       <div class="deal-layout">
 
-        <!-- LEFT: LinkedIn/GitHub-style investment timeline -->
-        <div class="deal-left">
-          <div class="deal-timeline">
+        <!-- TOP-LEFT: nodes 1 + 2 -->
+        <div class="deal-timeline deal-timeline--top">
 
             <div class="deal-node">
               <div class="deal-node-dot"></div>
@@ -94,9 +93,10 @@
                 <ul class="deal-costs">
                   <li><span>Цена квартиры</span><strong>54 000 €</strong></li>
                   <li><span>Услуги агентства</span><strong>+ 8 000 €</strong></li>
-                  <li><span>Нотариус и налог</span><strong>+ 7 000 €</strong></li>
+                  <li><span>Услуги нотариуса + налог на покупку</span><strong>+ 7 000 €</strong></li>
+                  <li class="deal-costs-total"><span>Итого вложено</span><strong>69 000 €</strong></li>
+                  <li><span>Налог на имущество (IMU)</span><strong>800 € / год</strong></li>
                 </ul>
-                <p class="deal-total">Итого вложено: <strong>69 000 €</strong></p>
               </div>
             </div>
 
@@ -108,13 +108,28 @@
                   <h3>Сдача в аренду</h3>
                 </div>
                 <p class="deal-amount">1 000 € / мес × 12 = <strong>12 000 € в год</strong></p>
-                <p class="deal-note">Семья или студенты по комнатам. Коммунальные — арендатор.</p>
+                <p class="deal-note">Семья или студенты по комнатам.<br>Коммунальные — арендатор.</p>
                 <ul class="deal-costs" style="margin-top:0.5rem">
-                  <li><span>Налог на имущество (IMU)</span><strong>− 800 € / год</strong></li>
                   <li><span>Налог на доход</span><strong>− 2 520 € / год</strong></li>
                 </ul>
               </div>
             </div>
+
+        </div>
+
+        <!-- TOP-RIGHT: video -->
+        <div class="deal-video">
+            <iframe
+              src="https://www.youtube.com/embed/qfGGOAXqIuE"
+              title="Пример инвестиции — обзор квартиры в Турине"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+        </div>
+
+        <!-- BOTTOM-LEFT: node 3 -->
+        <div class="deal-timeline deal-timeline--bottom">
 
             <div class="deal-node deal-node--result">
               <div class="deal-node-dot deal-node-dot--result"></div>
@@ -125,32 +140,17 @@
                 </div>
                 <p class="deal-amount">12 000 − 800 − 2 520 = <strong>8 680 € / год</strong></p>
                 <ul class="deal-costs" style="margin-top:0.5rem">
-                  <li><span>Капитализация имущества (~3% / год)</span><strong>+ 1 620 € / год</strong></li>
+                  <li><span>Капитализация (~3% / год)</span><strong>+ 1 620 € / год</strong></li>
                   <li class="deal-costs-total"><span>Совокупный доход</span><strong>≈ 10 300 € / год</strong></li>
                 </ul>
                 <p class="deal-total"><strong>~14.9% годовых · окупаемость ~7 лет</strong></p>
               </div>
             </div>
 
-          </div>
         </div>
 
-        <!-- RIGHT: Video first, then thumbnail carousel -->
-        <div class="deal-right">
-
-          <!-- Video -->
-          <div class="deal-video">
-            <iframe
-              src="https://www.youtube.com/embed/qfGGOAXqIuE"
-              title="Пример инвестиции — обзор квартиры в Турине"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-
-          <!-- Thumbnail carousel -->
-          <div class="deal-carousel" id="dealCarousel">
+        <!-- BOTTOM-RIGHT: carousel -->
+        <div class="deal-carousel" id="dealCarousel">
             <div class="deal-carousel-track" id="dealCarouselTrack">
               <img src="assets/sample-deal/deal-01.jpg" alt="Квартира — вид 1" loading="lazy" />
               <img src="assets/sample-deal/deal-02.jpg" alt="Квартира — вид 2" loading="lazy" />
@@ -168,9 +168,8 @@
             </div>
             <button class="deal-carousel-btn deal-carousel-btn--prev" id="dealPrev" aria-label="Предыдущее фото">&#8249;</button>
             <button class="deal-carousel-btn deal-carousel-btn--next" id="dealNext" aria-label="Следующее фото">&#8250;</button>
-          </div>
-
         </div>
+
       </div>
     </section>
       <section id="services" class="container section">
@@ -342,7 +341,7 @@
     <section id="contact" class="container section contact" style="background:url('https://images.pexels.com/photos/28708294/pexels-photo-28708294.jpeg?auto=compress&cs=tinysrgb&w=2600') center/cover no-repeat fixed">
       <div class="contact-overlay">
       <h2>Связаться</h2>
-      <p>Пишите нам — заполни форму, и мы откроем WhatsApp с вашим сообщением.</p>
+      <p>Пишите нам — заполни форму, и мы откроем выбранный мессенджер с вашим сообщением.</p>
 
       <form id="contactForm" class="contact-form" autocomplete="off">
         <label>Имя
