@@ -19,39 +19,6 @@ window.openMessenger = function(type, text){
 };
 
 document.addEventListener('DOMContentLoaded',()=>{
-    // DEV PASSWORD PROTECT (remove for production)
-    const DEV_PASSWORD = 'italia2026';
-    const overlay = document.getElementById('dev-protect-overlay');
-    const formDevProtect = document.getElementById('devProtectForm');
-    const input = document.getElementById('devProtectInput');
-    if (overlay && formDevProtect && input) {
-      function unlock() {
-        overlay.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-      function lock() {
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        input.value = '';
-        input.focus();
-      }
-      // Check sessionStorage
-      if (window.sessionStorage.getItem('devUnlocked') !== DEV_PASSWORD) {
-        lock();
-      }
-      formDevProtect.addEventListener('submit', e => {
-        e.preventDefault();
-        if (input.value === DEV_PASSWORD) {
-          window.sessionStorage.setItem('devUnlocked', DEV_PASSWORD);
-          unlock();
-        } else {
-          input.value = '';
-          input.placeholder = 'Неверный пароль';
-          input.classList.add('shake');
-          setTimeout(()=>input.classList.remove('shake'), 500);
-        }
-      });
-    }
   const navToggle=document.getElementById('navToggle');
   const nav=document.getElementById('nav');
   navToggle&&navToggle.addEventListener('click',()=>{

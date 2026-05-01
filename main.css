@@ -101,49 +101,6 @@
   padding: 0 20px 18px 20px;
   min-height: 44px;
 }
-.dev-protect-overlay {
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(34, 34, 44, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(6px);
-}
-.dev-protect-modal {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 40px #0005;
-  padding: 2.5rem 2.2rem 2rem 2.2rem;
-  max-width: 95vw;
-  width: 370px;
-  text-align: center;
-  animation: popin 0.5s cubic-bezier(0.7, -0.2, 0.5, 1.5);
-}
-.dev-protect-modal h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #222;
-}
-.dev-protect-modal p {
-  color: #444;
-}
-.dev-protect-hint {
-  color: #888;
-  font-size: 0.98rem;
-  margin-top: 1.2rem;
-}
-@keyframes popin {
-  0% {
-    transform: scale(0.7) translateY(40px);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-}
 .svg-map-italy {
   display: flex;
   justify-content: center;
