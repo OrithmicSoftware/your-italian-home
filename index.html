@@ -54,6 +54,7 @@
         Твой Дом в Италии
       </a>
       <nav class="nav" id="nav">
+        <a href="#deal">Пример инвестиции</a>
         <a href="#services">Услуги</a>
         <a href="#turin">Почему Турин</a>
         <a href="#about">О нас</a>
@@ -84,7 +85,105 @@
       </div>
     </div>
   </section>
+    <section id="deal" class="container section deal-section">
+      <h2>Пример инвестиции</h2>
+      <p class="section-sub">Реальная квартира в Турине — от покупки до арендного дохода</p>
 
+      <div class="deal-layout">
+
+        <!-- LEFT: LinkedIn/GitHub-style investment timeline -->
+        <div class="deal-left">
+          <div class="deal-timeline">
+
+            <div class="deal-node">
+              <div class="deal-node-dot"></div>
+              <div class="deal-node-body">
+                <div class="deal-node-header">
+                  <span class="deal-node-icon">🏠</span>
+                  <h3>Покупка квартиры</h3>
+                </div>
+                <ul class="deal-costs">
+                  <li><span>Цена квартиры</span><strong>54 000 €</strong></li>
+                  <li><span>Услуги агентства</span><strong>+ 8 000 €</strong></li>
+                  <li><span>Нотариус и налог</span><strong>+ 7 000 €</strong></li>
+                </ul>
+                <p class="deal-total">Итого вложено: <strong>69 000 €</strong></p>
+              </div>
+            </div>
+
+            <div class="deal-node">
+              <div class="deal-node-dot deal-node-dot--income"></div>
+              <div class="deal-node-body">
+                <div class="deal-node-header">
+                  <span class="deal-node-icon">💶</span>
+                  <h3>Сдача в аренду</h3>
+                </div>
+                <p class="deal-amount">1 000 € / мес × 12 = <strong>12 000 € в год</strong></p>
+                <p class="deal-note">Семья или студенты по комнатам. Коммунальные — арендатор.</p>
+                <ul class="deal-costs" style="margin-top:0.5rem">
+                  <li><span>Налог на имущество (IMU)</span><strong>− 800 € / год</strong></li>
+                  <li><span>Налог на доход</span><strong>− 2 520 € / год</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="deal-node deal-node--result">
+              <div class="deal-node-dot deal-node-dot--result"></div>
+              <div class="deal-node-body deal-node-body--result">
+                <div class="deal-node-header">
+                  <span class="deal-node-icon">📊</span>
+                  <h3>Чистый доход</h3>
+                </div>
+                <p class="deal-amount">12 000 − 800 − 2 520 = <strong>8 680 € / год</strong></p>
+                <ul class="deal-costs" style="margin-top:0.5rem">
+                  <li><span>Капитализация имущества (~3% / год)</span><strong>+ 1 620 € / год</strong></li>
+                  <li class="deal-costs-total"><span>Совокупный доход</span><strong>≈ 10 300 € / год</strong></li>
+                </ul>
+                <p class="deal-total"><strong>~14.9% годовых · окупаемость ~7 лет</strong></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: Video first, then thumbnail carousel -->
+        <div class="deal-right">
+
+          <!-- Video -->
+          <div class="deal-video">
+            <iframe
+              src="https://www.youtube.com/embed/qfGGOAXqIuE"
+              title="Пример инвестиции — обзор квартиры в Турине"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <!-- Thumbnail carousel -->
+          <div class="deal-carousel" id="dealCarousel">
+            <div class="deal-carousel-track" id="dealCarouselTrack">
+              <img src="assets/sample-deal/deal-01.jpg" alt="Квартира — вид 1" loading="lazy" />
+              <img src="assets/sample-deal/deal-02.jpg" alt="Квартира — вид 2" loading="lazy" />
+              <img src="assets/sample-deal/deal-03.jpg" alt="Квартира — вид 3" loading="lazy" />
+              <img src="assets/sample-deal/deal-04.jpg" alt="Квартира — вид 4" loading="lazy" />
+              <img src="assets/sample-deal/deal-05.jpg" alt="Квартира — вид 5" loading="lazy" />
+              <img src="assets/sample-deal/deal-06.jpg" alt="Квартира — вид 6" loading="lazy" />
+              <img src="assets/sample-deal/deal-07.jpg" alt="Квартира — вид 7" loading="lazy" />
+              <img src="assets/sample-deal/deal-08.jpg" alt="Квартира — вид 8" loading="lazy" />
+              <img src="assets/sample-deal/deal-09.jpg" alt="Квартира — вид 9" loading="lazy" />
+              <img src="assets/sample-deal/deal-10.jpg" alt="Квартира — вид 10" loading="lazy" />
+              <img src="assets/sample-deal/deal-11.jpg" alt="Квартира — вид 11" loading="lazy" />
+              <img src="assets/sample-deal/deal-12.jpg" alt="Квартира — вид 12" loading="lazy" />
+              <img src="assets/sample-deal/deal-13.jpg" alt="Квартира — вид 13" loading="lazy" />
+            </div>
+            <button class="deal-carousel-btn deal-carousel-btn--prev" id="dealPrev" aria-label="Предыдущее фото">&#8249;</button>
+            <button class="deal-carousel-btn deal-carousel-btn--next" id="dealNext" aria-label="Следующее фото">&#8250;</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
       <section id="services" class="container section">
       <h2>Услуги</h2>
       <div class="section-hero">
@@ -292,6 +391,7 @@
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-nav">
+        <a href="#deal">Пример инвестиции</a> · 
         <a href="#services">Услуги</a> · 
         <a href="#turin">Почему Турин</a> · 
         <a href="#about">О нас</a> · 

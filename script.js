@@ -155,4 +155,63 @@ document.addEventListener('DOMContentLoaded',()=>{
       if (newPer !== perView) { perView = newPer; idx = 0; buildDots(); showPage(); }
     });
   }
+
+  // Deal photo carousel (scroll-snap + prev/next)
+  const dealTrack = document.getElementById('dealCarouselTrack');
+  const dealPrev = document.getElementById('dealPrev');
+  const dealNext = document.getElementById('dealNext');
+  if (dealTrack && dealPrev && dealNext) {
+    function dealScrollBy(dir) {
+      const thumb = dealTrack.querySelector('img');
+      if (!thumb) return;
+      const itemW = thumb.offsetWidth + parseInt(getComputedStyle(dealTrack).gap || 8);
+      dealTrack.scrollBy({ left: dir * itemW * 3, behavior: 'smooth' });
+    }
+    dealPrev.addEventListener('click', () => dealScrollBy(-1));
+    dealNext.addEventListener('click', () => dealScrollBy(1));
+
+    // Lightbox on image click
+    const lightbox = document.createElement('div');
+    lightbox.id = 'dealLightbox';
+    lightbox.innerHTML = '<button id="dealLbClose" aria-label="Закрыть">&times;</button><button id="dealLbPrev" aria-label="Назад">&#8249;</button><img id="dealLbImg" src="" alt="" /><button id="dealLbNext" aria-label="Вперёд">&#8250;</button>';
+    document.body.appendChild(lightbox);
+
+    const lbImg = document.getElementById('dealLbImg');
+    const lbClose = document.getElementById('dealLbClose');
+    const lbPrev = document.getElementById('dealLbPrev');
+    const lbNext = document.getElementById('dealLbNext');
+    let lbImages = [];
+    let lbIndex = 0;
+
+    function lbOpen(idx) {
+      lbIndex = idx;
+      lbImg.src = lbImages[lbIndex];
+      lightbox.classList.add('deal-lb--open');
+      document.body.style.overflow = 'hidden';
+    }
+    function lbClose_() {
+      lightbox.classList.remove('deal-lb--open');
+      document.body.style.overflow = '';
+    }
+    function lbStep(dir) {
+      lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+      lbImg.src = lbImages[lbIndex];
+    }
+
+    dealTrack.querySelectorAll('img').forEach((img, i) => {
+      lbImages.push(img.src);
+      img.addEventListener('click', () => lbOpen(i));
+    });
+
+    lbClose.addEventListener('click', lbClose_);
+    lbPrev.addEventListener('click', () => lbStep(-1));
+    lbNext.addEventListener('click', () => lbStep(1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lbClose_(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('deal-lb--open')) return;
+      if (e.key === 'Escape') lbClose_();
+      if (e.key === 'ArrowLeft') lbStep(-1);
+      if (e.key === 'ArrowRight') lbStep(1);
+    });
+  }
 });
