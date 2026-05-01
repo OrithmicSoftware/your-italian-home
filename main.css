@@ -1072,6 +1072,11 @@ img.avatar {
     column-gap: 0;
     row-gap: 2rem;
   }
+  .deal-layout .deal-video,
+  .deal-layout .deal-carousel {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }
 .deal-timeline {
   position: relative;
